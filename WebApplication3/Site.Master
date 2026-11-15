@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication3.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="Css/Projeto.css" rel="stylesheet" />
+    <link href="Css/StyleSheet.css" rel="stylesheet" />
+
+    <!--recursos para exibir slides na pagina-->
+    <script src="JavaScript/jquery-1.7.2.min.js"></script>
+    <script src="JavaScript/flexslider.min.js"></script>
+    <link href="JavaScript/flexslider.css" rel="stylesheet" />
+
+
+</head>
+
+
+
+<body>
+    <form id="form1" runat="server">
+        <!--CABEÇALHO-->
+        <div class="cabecalho content-wrap">
+
+            <!--LOGOMARCA-->
+            <div class="logomarca">
+                <asp:Image ID="Logomarca" Width="100%" ImageUrl="~/images/Logo.png" runat="server" />
+            </div>
+
+            <!--BARRA TÍTULO-->
+            <div class="barra-titulo">
+            </div>
+            <!--BARRA MENU-->
+            <div class="barra-menu">
+                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Default.aspx" runat="server">HOME</asp:HyperLink>
+                <asp:HyperLink ID="Galeria" NavigateUrl="~/Galeria.aspx" runat="server">CARDÁPIO</asp:HyperLink>
+                <asp:HyperLink ID="Carrinho" NavigateUrl="~/Carrinho.aspx" runat="server">DELIVERY</asp:HyperLink>
+                <asp:HyperLink ID="Produtos" NavigateUrl="~/ExibirPedidos.aspx" Visible="false" runat="server">MEUS PEDIDOS</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/FaleConosco.aspx" runat="server">CONTATO</asp:HyperLink>
+                <asp:HyperLink ID="Login" NavigateUrl="~/Login.aspx" runat="server">ENTRAR</asp:HyperLink>
+
+                <asp:LinkButton OnClick="Logout_Click" ID="Logout" Visible="false" runat="server">SAIR</asp:LinkButton>
+
+            </div>
+        </div>
+
+
+        <!--CONTEUDO-->
+        <div class="conteudo content-wrap">
+            <asp:ContentPlaceHolder ID="Conteudo" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+
+        <!--RODAPÉ-->
+        <div class="rodape">
+            <div class="content-wrap" style="display: flex; align-items: flex-start; justify-content: space-between;">
+
+                <div style="flex-grow: 1;">
+                    <h2>Cheinho de Amor - Culinária Gourmet</h2>
+                    <br />
+                    <h3>Delivery</h3>
+                    <h4>Americana, Nova Odessa e Santa Bárbara D´Oeste - SP</h4>
+                    <h5>Whatsapp 19 98390-1200</h5>
+                </div>
+
+                <div style="text-align: center; margin-right: 40px;">
+                    <a href="https://www.instagram.com/cheinhodeamorgourmet/"
+                        target="_blank"
+                        title="Instagram"
+                        style="text-decoration: none; color: #fffbd7; /* removemos o float: right */">
+
+                        <img width="50px" src="Images/download.png" style="display: block; margin: 0 auto;" />
+                        <br />
+                        Acesse nosso Instagram
+            </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
